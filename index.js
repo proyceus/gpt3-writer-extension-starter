@@ -37,3 +37,10 @@ document.getElementById("save_key_button").addEventListener("click", saveKey);
 document
   .getElementById("change_key_button")
   .addEventListener("click", changeKey);
+
+checkForKey().then((response) => {
+  if (response) {
+    document.getElementById("key_needed").style.display = "none";
+    document.getElementById("key_entered").style.display = "block";
+  }
+});
