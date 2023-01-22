@@ -5,7 +5,7 @@ const saveKey = () => {
     const { value } = input;
 
     //encode string
-    const encodeValue = encode(value);
+    const encodedValue = encode(value);
 
     //save to google storage
     chrome.storage.local.set({ "openai-key": encodedValue }, () => {
@@ -13,6 +13,10 @@ const saveKey = () => {
       document.getElementById("key_entered").style.display = "block";
     });
   }
+};
+
+const encode = (input) => {
+  return btoa(input);
 };
 
 const changeKey = () => {};
