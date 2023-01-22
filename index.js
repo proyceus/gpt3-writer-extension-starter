@@ -1,3 +1,12 @@
+//function to check whether or not the api key is present
+const checkForKey = () => {
+  return new Promise((resolve, reject) => {
+    chrome.storage.local.get(["openai-key"], (result) => {
+      resolve(result["openai-key"]);
+    });
+  });
+};
+
 const saveKey = () => {
   const input = document.getElementById("key_input");
 
